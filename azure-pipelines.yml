@@ -14,7 +14,7 @@ steps:
     displayName: 'DotNet Core Build'
     inputs:
      command: build
-     projects: '**/web/*.csproj'
+     projects: '**/*web/*.csproj'
      configuration: $(buildConfiguration)
 
   - task: DotNetCoreCLI@2
@@ -22,7 +22,7 @@ steps:
     inputs:
       command: test
       projects: '**/*Tests/*.csproj'
-      arguments: '--configuration $(buildCOnfiguration) --collect:"code-coverage" --RunConfiguration.DisableAppDomain=true'
+      arguments: '--configuration $(buildConfiguration) --collect:"xplat code coverage" --RunConfiguration.DisableAppDomain=true'
       publishTestResults: true
 
   
