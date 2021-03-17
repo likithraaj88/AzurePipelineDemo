@@ -54,7 +54,7 @@ steps:
   - task: AzureWebApp@1
     displayName: 'Deploy to Azure Web App'
     inputs:
-      azureSubscription: 'dotnetazconn'
+      azureSubscription: 'AzDotnetConnection'
       appType: 'webApp'
-      appName: 'dotnetazdemo'
+      appName: 'likithApp'
       package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
